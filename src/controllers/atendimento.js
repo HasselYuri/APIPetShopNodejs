@@ -1,18 +1,18 @@
-const ServiceCachorro = require('../services/cachorro.js');
+const ServiceAtendimento = require('../services/atendimento.js');
 
-const controller = new ServiceCachorro();
+const controller = new ServiceAtendimento();
 
-class ControllerCachorro {
+class ControllerAtendimento {
 
     //MÉTODO ADD
 
     async Add(req, res) {
         try {
             const result = await controller.Add(
-                req.body.cachorro
+                req.body.atendimento
             )
             res.status(201).json({
-                cliente: result
+                atendimento: result
             })
         } catch (error) {
             console.log(error)
@@ -26,7 +26,7 @@ class ControllerCachorro {
         try {
             const result = await controller.PegarTodos()
             res.status(200).json({
-                cachorro: result
+                atendimento: result
             })
         } catch (error) {
             console.log(error)
@@ -39,12 +39,12 @@ class ControllerCachorro {
 
     async PegarUm(req, res) {
         try {
-            console.log(req.params.id)
+            console.log(req.params.idAtendimento)
             const result = await controller.PegarUm(
-                req.params.idCachorro
+                req.params.idAtendimento
             )
             res.status(200).json({
-                cachorro: result
+                atendimento: result
             })
         } catch (error) {
             console.log(error)
@@ -57,9 +57,9 @@ class ControllerCachorro {
 
     async Delete(req, res) {
         try {
-            await controller.Delete(req.params.idCachorro)
+            await controller.Delete(req.params.idAtendimento)
             res.status(200).json({
-                cachorro: result
+                atendimento: result
             })
         } catch (error) {
             console.log(error)
@@ -71,9 +71,9 @@ class ControllerCachorro {
 
     async Update(req, res) {
         try {
-            const result = await servico.Update(req.params.idCachorro, req.body.cachorro)
+            const result = await servico.Update(req.params.idAtendimento, req.body.atendimento)
             res.status(200).json({
-                cachorro: result
+                atendimento: result
             })
         } catch (error) {
             console.log(error)
@@ -83,4 +83,4 @@ class ControllerCachorro {
 
 }
 
-module.exports = ControllerCachorro;
+module.exports = ControllerAtendimento;

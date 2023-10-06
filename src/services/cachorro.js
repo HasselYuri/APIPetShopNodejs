@@ -27,21 +27,21 @@ class ServiceCachorro {
         return service.PegerTodos()
     }
 
-    async PegarUm(id, transaction) {
-        return service.PegarUm(id, transaction)
+    async PegarUm(idCachorro, transaction) {
+        return service.PegarUm(idCachorro, transaction)
     }
 
-    async Delete(id) {
-        return service.Delete(id);
+    async Delete(idCachorro) {
+        return service.Delete(idCachorro);
     }
 
-    async Update(id, cachorro) {
-        if (!id) {
+    async Update(idCachorro, cachorro) {
+        if (!idCachorro) {
             throw new Error('Não foi enviada o identificador da pessoa para alterar');
         }
         this.VerificarCachorro(cachorro)
 
-        return repositorio.Update(id, cachorro);
+        return repositorio.Update(idCachorro, cachorro);
     }
 }
 

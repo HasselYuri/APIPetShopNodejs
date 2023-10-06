@@ -5,3 +5,21 @@ CREATE TABLE clientes (
     nome VARCHAR(255),
     telefone VARCHAR(15) UNIQUE
 );
+
+--CRIANDO TABELA CACHORROS
+
+CREATE TABLE cachorros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nomeCachorro VARCHAR(255),
+    racaCachorro VARCHAR(255),
+    id: INT
+);
+
+--CRIANDO TABELA ATENDIMENTOS
+
+    CREATE TABLE atendimentos (
+	idAtendimento INT AUTO_INCREMENT PRIMARY KEY,
+    dataAtendimento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    valorAtendimento DECIMAL(7,2),
+    statusAtendimento BOOLEAN
+);
