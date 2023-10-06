@@ -71,7 +71,7 @@ class ControllerCachorro {
 
     async Update(req, res) {
         try {
-            const result = await servico.Update(req.params.idCachorro, req.body.cachorro)
+            const result = await controller.Update(req.params.idCachorro, req.body.cachorro)
             res.status(200).json({
                 cachorro: result
             })

@@ -41,7 +41,7 @@ class ServiceAtendimento {
         }
         this.VerificarAtendimento(atendimento)
 
-        return repositorio.Update(idAtendimento, atendimento);
+        return service.Update(idAtendimento, atendimento);
     }
 }
 

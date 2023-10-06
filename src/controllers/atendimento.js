@@ -71,7 +71,7 @@ class ControllerAtendimento {
 
     async Update(req, res) {
         try {
-            const result = await servico.Update(req.params.idAtendimento, req.body.atendimento)
+            const result = await controller.Update(req.params.idAtendimento, req.body.atendimento)
             res.status(200).json({
                 atendimento: result
             })

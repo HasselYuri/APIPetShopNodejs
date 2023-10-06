@@ -41,7 +41,7 @@ class ServiceCachorro {
         }
         this.VerificarCachorro(cachorro)
 
-        return repositorio.Update(idCachorro, cachorro);
+        return service.Update(idCachorro, cachorro);
     }
 }
 
