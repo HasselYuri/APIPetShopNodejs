@@ -1,4 +1,5 @@
-const Cliente = require('../models/cliente.js')
+const Cliente = require('../models/cliente.js');
+const Cachorro = require('../models/cachorro.js');
 
 class RepositorioCliente {
 
@@ -18,7 +19,8 @@ class RepositorioCliente {
     async PegarUm(id, transaction) {
         return Cliente.findOne({
             where: { id },
-            transaction
+            transaction,
+            include: [Cachorro]
         });
     }
 
